@@ -1,10 +1,26 @@
 version: 2.1
 
 jobs:
-  build:
+  cb:
     docker:
       - image: circleci/python:latest
 
     steps: 
     - checkout
     - run: echo "Hi Chris"
+
+  bb:
+    docker:
+      - image: circleci/python:latest
+
+    steps:
+    - checkout
+    - run: echo "Hi Benish"
+
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - cb
+      - bb
