@@ -16,6 +16,7 @@ jobs:
     steps:
     - checkout
     - run: echo "Hi Benish"
+    - run: echo $CIRCLE_BUILD_NUM
 
 
 workflows:
