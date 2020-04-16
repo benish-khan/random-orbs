@@ -23,4 +23,6 @@ workflows:
   build_and_test:
     jobs:
       - cb
-      - bb
+      - bb:
+          requires:
+            - cb
