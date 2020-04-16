@@ -8,7 +8,7 @@ jobs:
     steps: 
     - checkout
     - run: echo "Hi Chris"
-    - run: $CIRCLE_BUILD_NUM
+    - run: echo $CIRCLE_BUILD_NUM
 
   bb:
     docker:
