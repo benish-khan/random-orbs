@@ -8,6 +8,7 @@ jobs:
     steps: 
     - checkout
     - run: echo "Hi Chris"
+    - run: $CIRCLE_BUILD_NUM
 
   bb:
     docker:
@@ -18,6 +19,16 @@ jobs:
     - run: echo "Hi Benish"
     - run: echo $CIRCLE_BUILD_NUM
 
+  anna:
+    docker:
+      - image: circleci/python:latest
+
+    steps:
+    - checkout
+    - run: echo "Hi Anna"
+    - run: echo $CIRCLE_BUILD_NUM
+
+
 
 workflows:
   version: 2.1
@@ -27,3 +38,7 @@ workflows:
       - bb:
           requires:
             - cb
+      - anna:
+          requires:
+            - bb
+            
