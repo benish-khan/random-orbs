@@ -9,6 +9,11 @@ jobs:
     - checkout
     - run: echo "Hi Chris"
     - run: echo $CIRCLE_BUILD_NUM
+    - run: touch test_file_1 echo "persisting this info from Hi Chris."
+    - persist_to_workspace:
+        root: /tmp/dir
+        paths:
+          - /tmp/dir
 
   bb:
     docker:
@@ -18,6 +23,8 @@ jobs:
     - checkout
     - run: echo "Hi Benish"
     - run: echo $CIRCLE_BUILD_NUM
+    - attach_workspace:
+        at: /tmp/workspace
 
   anna:
     docker:
@@ -41,4 +48,5 @@ workflows:
       - anna:
           requires:
             - bb
+
 
