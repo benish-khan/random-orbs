@@ -12,7 +12,7 @@ jobs:
     - run: touch test_file_1 echo "persisting this info from Hi Chris."
     - persist_to_workspace:
         root: ~/
-        paths: /tmp/dir
+        paths: /Git/circleci_sandbox
 
   bb:
     docker:
