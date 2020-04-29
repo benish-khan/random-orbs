@@ -22,8 +22,9 @@ jobs:
     - checkout
     - run: echo "Hi Benish"
     - run: echo $CIRCLE_BUILD_NUM
+    - run: echo test_file_1
     - attach_workspace:
-        at: /tmp/workspace
+        at: /Git/circleci_sandbox
 
   anna:
     docker:
