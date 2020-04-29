@@ -11,8 +11,9 @@ jobs:
     - run: echo $CIRCLE_BUILD_NUM
     - run: touch test_file_1 echo "persisting this info from Hi Chris."
     - persist_to_workspace:
-        root: ~/
-        paths: /Git/circleci_sandbox
+        root: /tmp/workspace
+        paths:
+          - foo/test
 
   bb:
     docker:
@@ -24,7 +25,7 @@ jobs:
     - run: echo $CIRCLE_BUILD_NUM
     - run: echo test_file_1
     - attach_workspace:
-        at: /Git/circleci_sandbox
+        at: /tmp/workspace
 
   anna:
     docker:
