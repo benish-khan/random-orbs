@@ -4,16 +4,16 @@ jobs:
   cb:
     docker:
       - image: circleci/python:latest
-
+    working_directory: /tmp
     steps: 
     - checkout
     - run: echo "Hi Chris"
     - run: echo $CIRCLE_BUILD_NUM
-    - run: touch test_file_1 echo "persisting this info from Hi Chris."
+    - run: echo "Information from cb." > workspace/test
     - persist_to_workspace:
-        root: /tmp/workspace
+        root: workspace
         paths:
-          - foo/test
+          - test
 
   bb:
     docker:
