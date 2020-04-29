@@ -6,11 +6,11 @@ jobs:
       - image: circleci/python:latest
     working_directory: /tmp
     steps: 
-    - checkout
-    - run: echo "Hi Chris"
-    - run: echo $CIRCLE_BUILD_NUM
-    - run: echo "Information from cb." > workspace/test
-    - persist_to_workspace:
+      - checkout
+      - run: echo "Hi Chris"
+      - run: echo $CIRCLE_BUILD_NUM
+      - run: echo "Information from cb." > workspace/test
+      - persist_to_workspace:
         root: workspace
         paths:
           - test
