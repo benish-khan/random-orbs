@@ -6,7 +6,7 @@ jobs:
     environment:
       FOO: Bebe
     steps:
-      # - run: call api -> get the reponse -> FOO = Ben
+      # - run: call api -> get the reponse -> FOO = new value set via API
       # - run: |
-      # call api -> get the response -> FOO = Ben
+      # call api -> get the response -> FOO = new value set via API
     - run: echo export FOO=$FOO >> $BASH_ENV
